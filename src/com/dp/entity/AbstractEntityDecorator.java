@@ -13,6 +13,10 @@ public abstract class AbstractEntityDecorator implements Entity {
         this.entity = e;
     }
 
+    /**
+     * Draws the base Entity. You can add extra graphics in the decorators.
+     * @param g
+     */
     @Override
     public void draw(Graphics g) {
         this.entity.draw(g);
