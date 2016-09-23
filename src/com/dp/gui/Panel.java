@@ -18,12 +18,15 @@ public class Panel extends JPanel {
     private Graphics2D graphics2D;
 
     public Panel(int width, int height) {
-        this.setPreferredSize(new Dimension(width, height));
         this.entities = new ArrayList<>();
     }
 
     public void addEntity(Entity e) {
         this.entities.add(e);
+    }
+
+    public void setEntities(List<Entity> l) {
+        this.entities = l;
     }
 
     private void createGraphics() {
@@ -37,6 +40,9 @@ public class Panel extends JPanel {
 
         if (this.graphics2D == null)
             createGraphics();
+
+        this.graphics2D.setColor(Color.BLACK);
+        this.graphics2D.fillRect(0, 0, getWidth(), getHeight());
 
         for (Entity e : this.entities)
             e.draw(this.graphics2D);

@@ -14,13 +14,13 @@ public class YellowEntityDecorator extends AbstractEntityDecorator {
     @Override
     public void draw(Graphics g) {
         super.draw(g);
-        System.out.println("Drawing yellow.");
+//        System.out.println("Drawing yellow.");
     }
 
     @Override
     public void move(long deltaTime) {
         super.move(deltaTime);
-        System.out.println("Moving yellow.");
+//        System.out.println("Moving yellow.");
     }
 
     @Override
