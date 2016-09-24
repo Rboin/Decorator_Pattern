@@ -2,6 +2,9 @@ package com.dp.entity.factory;
 
 import com.dp.entity.Character;
 import com.dp.entity.*;
+import com.dp.entity.decorator.RedEntityDecorator;
+import com.dp.entity.decorator.WhiteTriangleEntityDecorator;
+import com.dp.entity.decorator.YellowEntityDecorator;
 import com.dp.entity.movement.BasicMoveStrategy;
 import com.dp.entity.movement.MoveStrategy;
 import com.dp.entity.vector.Vector2D;

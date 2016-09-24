@@ -1,4 +1,6 @@
-package com.dp.entity;
+package com.dp.entity.decorator;
+
+import com.dp.entity.Entity;
 
 import java.awt.*;
 
