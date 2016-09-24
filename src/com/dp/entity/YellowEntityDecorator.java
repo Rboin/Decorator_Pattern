@@ -8,12 +8,12 @@ import java.awt.*;
 public class YellowEntityDecorator extends AbstractEntityDecorator {
     public YellowEntityDecorator(Entity e) {
         super(e);
-        setColor(Color.yellow);
     }
 
     @Override
     public void draw(Graphics g) {
         super.draw(g);
+        g.setColor(Color.yellow);
         g.fillRect((int) this.getX(), (int) this.getY(), this.getWidth(), this.getHeight());
     }
 
@@ -23,8 +23,4 @@ public class YellowEntityDecorator extends AbstractEntityDecorator {
 //        System.out.println("Moving yellow.");
     }
 
-    @Override
-    public void setColor(Color c) {
-        super.setColor(c);
-    }
 }
