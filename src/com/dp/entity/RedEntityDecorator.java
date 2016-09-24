@@ -15,13 +15,12 @@ public class RedEntityDecorator extends AbstractEntityDecorator {
     @Override
     public void draw(Graphics g) {
         super.draw(g);
-//        System.out.println("Drawing red.");
+        g.fillRect((int) this.getX(), (int) this.getY(), this.getWidth(), this.getHeight());
     }
 
     @Override
     public void move(long deltaTime) {
         super.move(deltaTime);
-//        System.out.println("Moving red.");
     }
 
     @Override

@@ -14,7 +14,7 @@ public class YellowEntityDecorator extends AbstractEntityDecorator {
     @Override
     public void draw(Graphics g) {
         super.draw(g);
-//        System.out.println("Drawing yellow.");
+        g.fillRect((int) this.getX(), (int) this.getY(), this.getWidth(), this.getHeight());
     }
 
     @Override

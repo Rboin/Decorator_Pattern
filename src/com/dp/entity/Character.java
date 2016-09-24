@@ -1,6 +1,7 @@
 package com.dp.entity;
 
 import com.dp.entity.movement.MoveStrategy;
+import com.dp.entity.vector.Vector2D;
 
 import java.awt.*;
 
@@ -9,26 +10,21 @@ import java.awt.*;
  */
 public class Character implements Entity {
 
-    private final MoveStrategy strategy;
+    private MoveStrategy strategy;
+    private Vector2D position;
     private Color color;
     private int width, height;
 
     private int MAX_WIDTH, MAX_HEIGHT;
 
-    public Character(int width, int height, MoveStrategy strategy) {
+    public Character(int width, int height, Vector2D position, MoveStrategy strategy) {
         this.width = width;
         this.height = height;
+        this.position = position;
         this.strategy = strategy;
     }
 
     //<editor-fold desc="Setters">
-    public void setWidth(int width) {
-        this.width = width;
-    }
-
-    public void setHeight(int height) {
-        this.height = height;
-    }
 
     public void setMaxWidth(int mWidth) {
         this.MAX_WIDTH = mWidth;
@@ -38,12 +34,39 @@ public class Character implements Entity {
         this.MAX_HEIGHT = mHeight;
     }
 
+    @Override
+    public float getX() {
+        return this.position.getX();
+    }
+
+    @Override
+    public float getY() {
+        return this.position.getY();
+    }
+
+    @Override
+    public int getWidth() {
+        return this.width;
+    }
+
+    public void setWidth(int width) {
+        this.width = width;
+    }
+
+    @Override
+    public int getHeight() {
+        return this.height;
+    }
+
+    public void setHeight(int height) {
+        this.height = height;
+    }
     //</editor-fold>
 
     @Override
     public void draw(Graphics g) {
         g.setColor(this.color);
-        g.fillRect(((int) (this.strategy.getX())), ((int) (this.strategy.getY())),
+        g.drawRect((int) this.getX(), (int) this.getY(),
                 this.width, this.height);
     }
 

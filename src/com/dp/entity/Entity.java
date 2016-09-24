@@ -11,4 +11,12 @@ public interface Entity {
     void move(long deltaTime);
 
     void setColor(Color c);
+
+    float getX();
+
+    float getY();
+
+    int getWidth();
+
+    int getHeight();
 }

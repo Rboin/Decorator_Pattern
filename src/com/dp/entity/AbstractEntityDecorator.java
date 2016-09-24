@@ -15,6 +15,7 @@ public abstract class AbstractEntityDecorator implements Entity {
 
     /**
      * Draws the base Entity. You can add extra graphics in the decorators.
+     *
      * @param g
      */
     @Override
@@ -31,4 +32,25 @@ public abstract class AbstractEntityDecorator implements Entity {
     public void setColor(Color c) {
         this.entity.setColor(c);
     }
+
+    @Override
+    public float getX() {
+        return this.entity.getX();
+    }
+
+    @Override
+    public float getY() {
+        return this.entity.getY();
+    }
+
+    @Override
+    public int getWidth() {
+        return this.entity.getWidth();
+    }
+
+    @Override
+    public int getHeight() {
+        return this.entity.getHeight();
+    }
+
 }

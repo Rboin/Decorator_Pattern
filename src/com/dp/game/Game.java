@@ -1,11 +1,8 @@
 package com.dp.game;
 
-import com.dp.entity.Character;
 import com.dp.entity.Entity;
-import com.dp.entity.RedEntityDecorator;
-import com.dp.entity.YellowEntityDecorator;
-import com.dp.entity.movement.BasicMoveStrategy;
-import com.dp.entity.movement.MoveStrategy;
+import com.dp.entity.factory.EntityFactory;
+import com.dp.entity.factory.EntityType;
 import com.dp.gui.Panel;
 
 import javax.swing.*;
@@ -24,6 +21,7 @@ public class Game {
     private JFrame frame;
     private Panel panel;
     private Random random;
+    private EntityFactory factory;
 
     private List<Entity> entities;
 
@@ -32,6 +30,7 @@ public class Game {
         HEIGHT = height;
         this.random = new Random();
         this.entities = new ArrayList<>();
+        this.factory = new EntityFactory();
 
         this.frame = new JFrame("Decorator");
         this.frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -52,7 +51,7 @@ public class Game {
     }
 
     private void loop() {
-        long startTime = 0,
+        long startTime,
                 deltaTime = 0;
         while (true) {
             startTime = System.currentTimeMillis();
@@ -72,26 +71,8 @@ public class Game {
 
     private Entity createEntity(int i, int width, int height) {
         if (i % 2 == 0)
-            return createRedEntity(width, height);
-        return createYellowEntity(width, height);
-    }
-
-    private Entity createRedEntity(int width, int height) {
-        MoveStrategy strategy = new BasicMoveStrategy(new float[]{random.nextInt(WIDTH), random.nextInt(HEIGHT)}, new float[]{1f, 1f},
-                new float[]{0f, 0f}, width, height, WIDTH, HEIGHT);
-        Entity e = new Character(width, height, strategy);
-
-        Entity decorator = new RedEntityDecorator(e);
-        return decorator;
-    }
-
-    private Entity createYellowEntity(int width, int height) {
-        MoveStrategy strategy = new BasicMoveStrategy(new float[]{random.nextInt(WIDTH), random.nextInt(HEIGHT)}, new float[]{1f, 1f},
-                new float[]{0f, 0f}, width, height, WIDTH, HEIGHT);
-        Entity e = new Character(width, height, strategy);
-
-        Entity decorator = new YellowEntityDecorator(e);
-        return decorator;
+            return this.factory.getEntity(EntityType.RED, this.panel.getWidth(), this.panel.getHeight(), width, height, this.random);
+        return this.factory.getEntity(EntityType.YELLOW, this.panel.getWidth(), this.panel.getHeight(), width, height, this.random);
     }
 
 
