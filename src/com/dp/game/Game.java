@@ -57,7 +57,7 @@ public class Game {
             startTime = System.currentTimeMillis();
             for (Entity e : this.entities)
                 e.move(deltaTime);
-            this.frame.repaint();
+            this.panel.repaint();
 
             deltaTime = System.currentTimeMillis() - startTime;
         }
@@ -72,7 +72,7 @@ public class Game {
     private Entity createEntity(int i, int width, int height) {
         if (i % 2 == 0)
             return this.factory.getEntity(EntityType.RED, this.panel.getWidth(), this.panel.getHeight(), width, height, this.random);
-        return this.factory.getEntity(EntityType.YELLOW, this.panel.getWidth(), this.panel.getHeight(), width, height, this.random);
+        return this.factory.getEntity(EntityType.YELLOW_WITH_WHITE_HAT, this.panel.getWidth(), this.panel.getHeight(), width, height, this.random);
     }
 
 

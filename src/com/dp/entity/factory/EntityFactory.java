@@ -63,7 +63,7 @@ public class EntityFactory {
         Vector2D vector = new Vector2D((float) random.nextInt(maxWidth), (float) random.nextInt(maxHeight));
 
         // Create a basic movement strategy
-        MoveStrategy strategy = new BasicMoveStrategy(vector, new float[]{1f, 1f},
+        MoveStrategy strategy = new BasicMoveStrategy(vector, new float[]{-1f, -1f},
                 new float[]{0f, 0f}, width, height, maxWidth, maxHeight);
 
         // Create base character
@@ -97,7 +97,7 @@ public class EntityFactory {
         Vector2D vector = new Vector2D((float) random.nextInt(maxWidth), (float) random.nextInt(maxHeight));
 
         // Create a basic movement strategy
-        MoveStrategy strategy = new BasicMoveStrategy(vector, new float[]{1f, 1f},
+        MoveStrategy strategy = new BasicMoveStrategy(vector, new float[]{-1f, -1f},
                 new float[]{0f, 0f}, width, height, maxWidth, maxHeight);
 
         // Create base character

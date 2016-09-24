@@ -9,7 +9,7 @@ public class Main {
         int WIDTH = 1366, HEIGHT = 768;
 
         Game game = new Game(WIDTH, HEIGHT);
-        game.init(2, 100, 100);
+        game.init(5, 100, 100);
 
     }
 }
