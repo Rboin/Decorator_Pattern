@@ -8,7 +8,7 @@ import java.awt.*;
 /**
  * Created by robin on 9/22/16.
  */
-public class Character implements Entity {
+public class Rectangle implements Entity {
 
     private MoveStrategy strategy;
     private Vector2D position;
@@ -17,7 +17,7 @@ public class Character implements Entity {
 
     private int MAX_WIDTH, MAX_HEIGHT;
 
-    public Character(int width, int height, Vector2D position, MoveStrategy strategy) {
+    public Rectangle(int width, int height, Vector2D position, MoveStrategy strategy) {
         this.width = width;
         this.height = height;
         this.position = position;

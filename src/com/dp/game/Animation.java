@@ -14,7 +14,7 @@ import java.util.Random;
 /**
  * Created by robin on 9/22/16.
  */
-public class Game {
+public class Animation {
 
     public final int WIDTH, HEIGHT;
 
@@ -25,7 +25,7 @@ public class Game {
 
     private List<Entity> entities;
 
-    public Game(int width, int height) {
+    public Animation(int width, int height) {
         WIDTH = width;
         HEIGHT = height;
         this.random = new Random();
@@ -50,6 +50,9 @@ public class Game {
         loop();
     }
 
+    /**
+     * The animation update loop.
+     */
     private void loop() {
         long startTime,
                 deltaTime = 0;
@@ -63,6 +66,12 @@ public class Game {
         }
     }
 
+    /**
+     * Creates an N amount of entities.
+     * @param n
+     * @param width
+     * @param height
+     */
     private void initEntities(int n, int width, int height) {
         for (int i = 0; i < n; i++) {
             this.entities.add(createEntity(i, width, height));

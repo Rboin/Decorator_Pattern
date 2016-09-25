@@ -1,6 +1,6 @@
 package com.dp;
 
-import com.dp.game.Game;
+import com.dp.game.Animation;
 
 public class Main {
 
@@ -8,8 +8,8 @@ public class Main {
 
         int WIDTH = 1366, HEIGHT = 768;
 
-        Game game = new Game(WIDTH, HEIGHT);
-        game.init(5, 100, 100);
+        Animation animation = new Animation(WIDTH, HEIGHT);
+        animation.init(5, 100, 100);
 
     }
 }

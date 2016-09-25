@@ -17,7 +17,8 @@ public class RedEntityDecorator extends AbstractEntityDecorator {
     public void draw(Graphics g) {
         super.draw(g);
         g.setColor(Color.red);
-        g.fillRect((int) this.getX(), (int) this.getY(), this.getWidth(), this.getHeight());
+        g.fillRect((int) this.getX(), (int) this.getY(),
+                this.getWidth(), this.getHeight());
     }
 
     @Override

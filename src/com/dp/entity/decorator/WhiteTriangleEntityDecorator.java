@@ -17,7 +17,17 @@ public class WhiteTriangleEntityDecorator extends AbstractEntityDecorator {
     public void draw(Graphics g) {
         super.draw(g);
         g.setColor(Color.WHITE);
-        g.fillPolygon(new int[]{(int) this.getX(), (int) this.getX() + getWidth() / 2, (int) this.getX() + getWidth()},
-                new int[]{(int) this.getY(), (int) this.getY() - getHeight(), (int) this.getY()}, 3);
+        int[] x = new int[]{
+                (int) this.getX(),
+                (int) this.getX() + getWidth() / 2,
+                (int) this.getX() + getWidth()
+        };
+        int[] y = new int[]{
+                (int) this.getY(),
+                (int) this.getY() - getHeight() / 2,
+                (int) this.getY()
+        };
+        g.fillPolygon(x, y, 3);
     }
 }
+

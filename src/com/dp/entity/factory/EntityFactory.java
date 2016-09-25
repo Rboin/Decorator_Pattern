@@ -1,6 +1,6 @@
 package com.dp.entity.factory;
 
-import com.dp.entity.Character;
+import com.dp.entity.Rectangle;
 import com.dp.entity.*;
 import com.dp.entity.decorator.RedEntityDecorator;
 import com.dp.entity.decorator.WhiteTriangleEntityDecorator;
@@ -37,7 +37,7 @@ public class EntityFactory {
         MoveStrategy strategy = new BasicMoveStrategy(vector, new float[]{1f, 1f},
                 new float[]{0f, 0f}, width, height, maxWidth, maxHeight);
         // Create base character
-        Entity e = new Character(width, height, vector, strategy);
+        Entity e = new Rectangle(width, height, vector, strategy);
         e.setColor(Color.WHITE);
         return e;
     }
@@ -51,7 +51,7 @@ public class EntityFactory {
                 new float[]{0f, 0f}, width, height, maxWidth, maxHeight);
 
         // Create base character
-        Entity e = new Character(width, height, vector, strategy);
+        Entity e = new Rectangle(width, height, vector, strategy);
 
         // Decorate character
         Entity decorator = new RedEntityDecorator(e);
@@ -67,7 +67,7 @@ public class EntityFactory {
                 new float[]{0f, 0f}, width, height, maxWidth, maxHeight);
 
         // Create base character
-        Entity e = new Character(width, height, vector, strategy);
+        Entity e = new Rectangle(width, height, vector, strategy);
 
         // Decorate character
         Entity decorator = new YellowEntityDecorator(e);
@@ -83,7 +83,7 @@ public class EntityFactory {
                 new float[]{0f, 0f}, width, height, maxWidth, maxHeight);
 
         // Create base character
-        Entity e = new Character(width, height, vector, strategy);
+        Entity e = new Rectangle(width, height, vector, strategy);
 
         // Decorate character
         Entity decorator = new RedEntityDecorator(e);
@@ -92,6 +92,7 @@ public class EntityFactory {
         return decorator2;
     }
 
+    @SuppressWarnings("UnnecessaryLocalVariable")
     private Entity createYellowEntityWithWhiteHat(int maxWidth, int maxHeight, int width, int height, Random random) {
         // Create a position vector.
         Vector2D vector = new Vector2D((float) random.nextInt(maxWidth), (float) random.nextInt(maxHeight));
@@ -100,10 +101,9 @@ public class EntityFactory {
         MoveStrategy strategy = new BasicMoveStrategy(vector, new float[]{-1f, -1f},
                 new float[]{0f, 0f}, width, height, maxWidth, maxHeight);
 
-        // Create base character
-        Entity e = new Character(width, height, vector, strategy);
-
-        // Decorate character
+        // Create base entity
+        Entity e = new Rectangle(width, height, vector, strategy);
+        // Decorate entity
         Entity decorator = new YellowEntityDecorator(e);
         // Decorate decorator
         Entity decorator2 = new WhiteTriangleEntityDecorator(decorator);
