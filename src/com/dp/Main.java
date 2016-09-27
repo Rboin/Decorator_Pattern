@@ -10,6 +10,9 @@ public class Main {
 
         Animation animation = new Animation(WIDTH, HEIGHT);
         animation.init(5, 100, 100);
+        //animation.init(100, 50, 50);
+        //animation.init(5000, 10, 10);
+        //animation.init(100000, 5, 5);
 
     }
 }
